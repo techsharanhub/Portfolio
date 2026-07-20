@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sharan Arvind B. — AI/ML Developer</title>
+<meta name="description" content="Sharan Arvind B. — Programmer Analyst, AI/ML at Cognizant. Generative AI, LLM agents, RAG pipelines, chess tutor." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- scroll progress -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ambient WebGL neural field, fixed behind everything -->
+<canvas id="scene"></canvas>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="grain"></div>
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+  <span class="blob b4"></span>
+</div>
+
+<!-- side progress / section nav -->
+<nav class="orbit-nav" aria-label="Section navigation">
+  <ul>
+    <li><a href="#hero" data-label="Start"><span class="dot"></span></a></li>
+    <li><a href="#about" data-label="About"><span class="dot"></span></a></li>
+    <li><a href="#experience" data-label="Experience"><span class="dot"></span></a></li>
+    <li><a href="#projects" data-label="Projects"><span class="dot"></span></a></li>
+    <li><a href="#skills" data-label="Skills"><span class="dot"></span></a></li>
+    <li><a href="#certifications" data-label="Certs"><span class="dot"></span></a></li>
+    <li><a href="#videos" data-label="Videos"><span class="dot"></span></a></li>
+    <li><a href="#activity" data-label="Activity"><span class="dot"></span></a></li>
+    <li><a href="#contact" data-label="Contact"><span class="dot"></span></a></li>
+  </ul>
+</nav>
+
+<header class="topbar">
+  <a class="wordmark" href="#hero">SA<span>.</span></a>
+  <a class="topbar-cta magnetic" href="#contact"><span>Let's talk</span></a>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="section hero">
+    <div class="hero-core" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="knight-emblem">
+        <circle cx="60" cy="60" r="58" class="ke-ring-outer"/>
+        <circle cx="60" cy="60" r="44" class="ke-ring-inner"/>
+        <path class="ke-knight" d="M42 88 L42 74 Q42 62 50 56 L46 40 Q45 32 52 28 Q58 25 62 30 L70 44 Q78 48 78 58 L82 88 Z" />
+        <path class="ke-knight-eye" d="M56 40 a2.4 2.4 0 1 1 0.1 0" />
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Programmer Analyst — AI/ML · Cognizant · Chennai, India</p>
+      <h1 class="hero-title reveal" id="heroTitle">
+        <span class="line" data-text="Sharan Arvind">Sharan Arvind</span>
+        <span class="line accent-text" data-text="B.">B.</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Generative AI &amp; LLM agent systems by profession. RAG pipelines,
+        prompt architecture, agentic AI prototypes at Cognizant — plus an MBA
+        in progress and a parallel life as a <strong>chess tutor</strong>,
+        which is where the "read the position before you commit" instinct
+        actually comes from.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary magnetic"><span>See the work</span></a>
+        <a href="mailto:sharanarvind87@gmail.com" class="btn btn-ghost magnetic"><span>Get in touch</span></a>
+      </div>
+    </div>
+
+    <div class="scroll-cue reveal" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"><i></i></div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE TICKER ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Generative AI</span><span class="dot-sep">◆</span>
+      <span>LLM Agents</span><span class="dot-sep">◆</span>
+      <span>RAG Pipelines</span><span class="dot-sep">◆</span>
+      <span>LangChain</span><span class="dot-sep">◆</span>
+      <span>LlamaIndex</span><span class="dot-sep">◆</span>
+      <span>Computer Vision</span><span class="dot-sep">◆</span>
+      <span>Chess Strategy</span><span class="dot-sep">◆</span>
+      <span>Python</span><span class="dot-sep">◆</span>
+      <span>Prompt Engineering</span><span class="dot-sep">◆</span>
+      <span>Generative AI</span><span class="dot-sep">◆</span>
+      <span>LLM Agents</span><span class="dot-sep">◆</span>
+      <span>RAG Pipelines</span><span class="dot-sep">◆</span>
+      <span>LangChain</span><span class="dot-sep">◆</span>
+      <span>LlamaIndex</span><span class="dot-sep">◆</span>
+      <span>Computer Vision</span><span class="dot-sep">◆</span>
+      <span>Chess Strategy</span><span class="dot-sep">◆</span>
+      <span>Python</span><span class="dot-sep">◆</span>
+      <span>Prompt Engineering</span><span class="dot-sep">◆</span>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section about">
+    <div class="panel">
+      <p class="kicker reveal">01 — About</p>
+      <div class="about-grid">
+        <div class="avatar-orb reveal">
+          <div class="orb-ring"></div>
+          <div class="orb-ring ring-2"></div>
+          <div class="orb-core">
+            <span class="orb-initials">SA</span>
+            <img class="orb-photo" src="/Users/sharan/Documents/portfolio/assets/profile.jpeg" alt="Sharan Arvind B."
+                 onerror="this.style.display='none'" onload="this.parentElement.classList.add('has-photo')">
+          </div>
+          <svg class="orb-particles" viewBox="0 0 200 200">
+            <circle cx="100" cy="14" r="2.4" class="op"/>
+            <circle cx="186" cy="100" r="2" class="op op2"/>
+            <circle cx="100" cy="186" r="2.4" class="op op3"/>
+            <circle cx="14" cy="100" r="2" class="op op4"/>
+          </svg>
+        </div>
+        <div class="about-copy reveal">
+          <p class="lede">
+            AI/ML Developer specializing in generative AI — currently
+            deepening expertise in LLM-based systems and agentic
+            architectures at Cognizant, while pursuing an MBA (Pondicherry
+            University, DDE) to pair the technical instinct with business
+            strategy.
+          </p>
+          <p>
+            Alongside the day job, I work as a <strong>chess tutor</strong> —
+            teaching strategic thinking and problem-solving isn't a metaphor
+            I reach for, it's a second discipline that happens to sharpen the
+            first. I also spent a year as <strong>GDSC Lead</strong> at Sri
+            Manakula Vinayagar Engineering College and led IEEE's management
+            team, building the kind of community programs I once needed
+            myself.
+          </p>
+          <div class="about-stats">
+            <div class="stat"><span class="num" data-count="9.12">0</span><span class="label">CGPA / 10</span></div>
+            <div class="stat"><span class="num" data-count="7">0</span><span class="label">Shipped AI projects</span></div>
+            <div class="stat"><span class="num" data-count="17">0</span><span class="label">Certifications earned</span></div>
+            <div class="stat"><span class="num" data-count="2">0</span><span class="label">Languages · EN / TA</span></div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="about-scene reveal" viewBox="0 0 640 220" aria-hidden="true">
+        <!-- chessboard grid, 8x4 slice, isometric-flavored -->
+        <g class="as-board">
+          <rect x="120" y="40" width="400" height="140" rx="4"/>
+          <line x1="170" y1="40" x2="170" y2="180"/><line x1="220" y1="40" x2="220" y2="180"/>
+          <line x1="270" y1="40" x2="270" y2="180"/><line x1="320" y1="40" x2="320" y2="180"/>
+          <line x1="370" y1="40" x2="370" y2="180"/><line x1="420" y1="40" x2="420" y2="180"/>
+          <line x1="470" y1="40" x2="470" y2="180"/>
+          <line x1="120" y1="75" x2="520" y2="75"/><line x1="120" y1="110" x2="520" y2="110"/>
+          <line x1="120" y1="145" x2="520" y2="145"/>
+        </g>
+        <!-- neural links radiating outward from the board -->
+        <g class="as-link">
+          <line x1="145" y1="57" x2="40" y2="20"/>
+          <line x1="145" y1="57" x2="30" y2="90"/>
+          <line x1="145" y1="127" x2="35" y2="170"/>
+          <line x1="495" y1="57" x2="600" y2="18"/>
+          <line x1="495" y1="92" x2="610" y2="80"/>
+          <line x1="495" y1="163" x2="595" y2="195"/>
+          <line x1="295" y1="40" x2="270" y2="8"/>
+          <line x1="395" y1="40" x2="420" y2="6"/>
+        </g>
+        <!-- synapse nodes -->
+        <circle class="as-node as-pulse" cx="40" cy="20" r="3"/>
+        <circle class="as-node-alt as-pulse" cx="30" cy="90" r="2.6"/>
+        <circle class="as-node as-pulse" cx="35" cy="170" r="3"/>
+        <circle class="as-node-alt as-pulse" cx="600" cy="18" r="2.6"/>
+        <circle class="as-node as-pulse" cx="610" cy="80" r="3"/>
+        <circle class="as-node-alt as-pulse" cx="595" cy="195" r="2.6"/>
+        <circle class="as-node as-pulse" cx="270" cy="8" r="2.4"/>
+        <circle class="as-node-alt as-pulse" cx="420" cy="6" r="2.4"/>
+        <!-- king piece at center of the board, the strategic core -->
+        <path class="as-king" d="M320 150 L320 122 M308 128 L332 128 M300 150 Q300 132 320 128 Q340 132 340 150 Z M304 150 L336 150" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section experience">
+    <p class="kicker reveal">02 — Experience</p>
+    <h2 class="section-title reveal">Where the work has lived</h2>
+
+    <div class="timeline">
+      <div class="timeline-line" aria-hidden="true"></div>
+
+      <article class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card tilt-card">
+          <p class="t-date">Jul 2025 — Present</p>
+          <h3>Programmer Analyst — GN</h3>
+          <p class="t-org">Cognizant Technology Solutions, Chennai</p>
+          <ul>
+            <li>Deepening practical expertise in Generative AI, LLM-based applications, and AI agent architectures.</li>
+            <li>Building prototypes with LlamaIndex, LangChain, and Retrieval-Augmented Generation (RAG) pipelines.</li>
+            <li>Working on prompt engineering, document indexing, and context-aware AI workflows.</li>
+            <li>Contributing to exploratory agentic AI implementations for real business use cases.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card tilt-card">
+          <p class="t-date">Mar 2025 — Jun 2025</p>
+          <h3>Programmer Analyst Trainee — AI/ML</h3>
+          <p class="t-org">Cognizant Technology Solutions, Chennai</p>
+          <ul>
+            <li>Hands-on with Python, SQL, and end-to-end data science workflows.</li>
+            <li>Built and optimized ML models — preprocessing, feature engineering, evaluation.</li>
+            <li>Worked with structured data management and data warehousing concepts.</li>
+            <li>Developed predictive AI/ML solutions and explored Generative AI fundamentals.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card tilt-card">
+          <p class="t-date">Aug 2023 — Aug 2024</p>
+          <h3>GDSC Lead</h3>
+          <p class="t-org">Google Developer Student Clubs, Puducherry</p>
+          <ul>
+            <li>Led the campus chapter — workshops, hackathons, and networking events for the student developer community.</li>
+            <li>Ran the "ML Mastery" data-insights event and closed out the term with a full core-team handover.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section projects">
+    <p class="kicker reveal">03 — Projects</p>
+    <h2 class="section-title reveal">Systems I've built end to end</h2>
+
+    <div class="project-grid">
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-glow"></div>
+        <svg class="p-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><path d="M12 20 L17 20 L20 12 L23 28 L26 20 L28 20"/></svg>
+        <p class="p-date">Oct 2024 — Feb 2025 · AI/ML Developer</p>
+        <h3>Forward Collision Warning System</h3>
+        <p class="p-desc">
+          Real-time collision warning using YOLOv2 object detection, OpenCV
+          video processing, and GenAI-based behavior prediction — dynamic
+          risk-zone classification at 30 FPS with 90%+ detection accuracy
+          across urban, highway, and mixed-traffic conditions.
+        </p>
+        <ul class="tags">
+          <li>YOLOv2</li><li>OpenCV</li><li>Generative AI</li><li>ADAS</li>
+        </ul>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-glow"></div>
+        <svg class="p-icon" viewBox="0 0 40 40"><path d="M20 6 C10 6 5 14 5 20 C5 30 20 36 20 36 C20 36 35 30 35 20 C35 14 30 6 20 6 Z"/><path d="M20 14 L20 24 M15 19 L25 19"/></svg>
+        <p class="p-date">Mar 2024 — Jul 2024 · Team Lead</p>
+        <h3>HL-PS: AI-Driven Patient Risk &amp; Diagnostic System</h3>
+        <p class="p-desc">
+          A healthcare platform combining a symptom model, real-time
+          monitoring, AI-generated reports, a scribing model, and RAG-based
+          PDF analysis into one hospital dashboard — built to catch patient
+          risk earlier and speed up clinical decisions.
+        </p>
+        <ul class="tags">
+          <li>Python</li><li>MySQL</li><li>Gemini AI</li><li>RAG</li>
+        </ul>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-glow"></div>
+        <svg class="p-icon" viewBox="0 0 40 40"><rect x="8" y="10" width="24" height="16" rx="2"/><path d="M14 30 L26 30 M20 26 L20 30"/><circle cx="20" cy="18" r="4"/></svg>
+        <p class="p-date">Jul 2023 — Jan 2024 · Team Lead</p>
+        <h3>Truth Tracker — Deepfake Detection</h3>
+        <p class="p-desc">
+          A multimodal system fighting misinformation on YouTube — BERT-based
+          fake-news classification, Meso4 deepfake pipelines for frame-level
+          video/image checks, real-time search, and content-owner
+          identification for fast action.
+        </p>
+        <ul class="tags">
+          <li>BERT</li><li>NLP</li><li>Meso4</li><li>Computer Vision</li>
+        </ul>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-glow"></div>
+        <svg class="p-icon" viewBox="0 0 40 40"><path d="M10 16 L30 16 L28 32 L12 32 Z"/><path d="M15 16 L15 11 Q15 7 20 7 Q25 7 25 11 L25 16"/></svg>
+        <p class="p-date">Jun 2023 — Sep 2023 · Front-End Developer</p>
+        <h3>Zepp — AI Shopping Companion</h3>
+        <p class="p-desc">
+          Built at a Botathon (koreai) — GenAI product suggestions, an
+          ML-powered image search that predicts and recommends from an
+          uploaded photo, and a full cart/order management flow. Shaped the
+          UI end to end as front-end lead.
+        </p>
+        <ul class="tags">
+          <li>Generative AI</li><li>ML Image Search</li><li>Front-End</li>
+        </ul>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-glow"></div>
+        <svg class="p-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M20 7 L20 12 M20 28 L20 33 M7 20 L12 20 M28 20 L33 20"/></svg>
+        <p class="p-date">Jan 2023 — Feb 2023</p>
+        <h3>ConnectZ — Civic Engagement App</h3>
+        <p class="p-desc">
+          Direct-to-official communication for citizens — anonymous
+          reporting, geo-based feeds, accountability checks against false
+          claims, and verification teams to keep only verified posts reaching
+          authorities.
+        </p>
+        <ul class="tags">
+          <li>Mobile App</li><li>Geo Feeds</li><li>Civic Tech</li>
+        </ul>
+      </article>
+
+      <article class="project-card tilt-card reveal">
+        <div class="project-glow"></div>
+        <svg class="p-icon" viewBox="0 0 40 40"><path d="M20 8 C14 14 10 20 10 25 a10 10 0 0 0 20 0 C30 20 26 14 20 8 Z"/></svg>
+        <p class="p-date">Jun 2022 — Aug 2022</p>
+        <h3>Eco-E: Eco-Energy Hub</h3>
+        <p class="p-desc">
+          Waste-to-resource pipeline — AI-driven sorting paired with
+          controlled incineration for energy recovery, HEPA filtration and
+          carbon-capture tech, and recycling loops for metal, glass, and
+          plastic streams.
+        </p>
+        <ul class="tags">
+          <li>AI Sorting</li><li>Sustainability</li><li>Systems Design</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section skills">
+    <p class="kicker reveal">04 — Skills</p>
+    <h2 class="section-title reveal">The stack, mapped</h2>
+
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <h3>Generative AI &amp; Agentic Systems</h3>
+        <ul class="tags"><li>LLMs</li><li>LlamaIndex</li><li>LangChain</li><li>RAG Pipelines</li><li>Prompt Engineering</li><li>Chatbot Development</li></ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Machine Learning &amp; Data Science</h3>
+        <ul class="tags"><li>Neural Networks</li><li>Computer Vision</li><li>NLP</li><li>Predictive Modeling</li><li>Deep Learning</li><li>Image Processing</li></ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Programming &amp; Tools</h3>
+        <ul class="tags"><li>Python</li><li>SQL</li><li>Java</li><li>OpenCV</li><li>MySQL</li><li>Oracle</li><li>Git</li></ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Cloud, Data &amp; Deployment</h3>
+        <ul class="tags"><li>GCP</li><li>Azure</li><li>Flask</li><li>Streamlit</li><li>Power BI</li><li>Tableau</li><li>Data Warehousing</li></ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Emerging Tech</h3>
+        <ul class="tags"><li>Blockchain</li><li>Smart Contracts</li><li>Cyber Threat Intelligence</li><li>IVR</li></ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Management</h3>
+        <ul class="tags"><li>Business Strategy</li><li>Leadership</li><li>Project Management</li><li>Event Management</li><li>Stakeholder Communication</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section id="certifications" class="section certifications">
+    <p class="kicker reveal">05 — Certifications</p>
+    <h2 class="section-title reveal">Credentials on record</h2>
+
+    <div class="cert-grid">
+      <div class="cert-card tilt-card reveal"><p class="c-year">2025</p><h3>Data Science Bootcamp</h3><p class="c-issuer">Udemy</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2025</p><h3>SQL for Beginners</h3><p class="c-issuer">Udemy</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2025</p><h3>Statistics &amp; Data Analytics</h3><p class="c-issuer">Udemy</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2025</p><h3>Blockchain and Its Applications</h3><p class="c-issuer">NPTEL</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2024</p><h3>Data Structures &amp; Algorithms — Java</h3><p class="c-issuer">NPTEL</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2024</p><h3>Java Programming</h3><p class="c-issuer">Great Learning</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2023</p><h3>Generative AI Fundamentals</h3><p class="c-issuer">Databricks Academy</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2023</p><h3>Alteryx Designer Core</h3><p class="c-issuer">Alteryx</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2023</p><h3>Data Analytics Process Automation</h3><p class="c-issuer">AICTE Virtual Internship</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2023</p><h3>Introduction to Blockchain</h3><p class="c-issuer">DApp World</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2023</p><h3>Process Mining</h3><p class="c-issuer">AICTE Virtual Internship</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2023</p><h3>UiPath RPA Citizen Developer</h3><p class="c-issuer">UiPath Academy</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2022</p><h3>Python for Data Science</h3><p class="c-issuer">NPTEL</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2022</p><h3>Robotic Process Automation</h3><p class="c-issuer">AICTE Virtual Internship</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">—</p><h3>Data Processing Specialist</h3><p class="c-issuer">AMCAT · Aspiring Minds</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">—</p><h3>English Comprehension</h3><p class="c-issuer">AMCAT · Aspiring Minds</p></div>
+      <div class="cert-card tilt-card reveal"><p class="c-year">2025</p><h3>AI Foundation Program</h3><p class="c-issuer">Cognizant Technology Solutions</p></div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEOS ============ -->
+  <section id="videos" class="section videos">
+    <p class="kicker reveal">06 — Videos</p>
+    <h2 class="section-title reveal">Demos &amp; walkthroughs</h2>
+
+    <div class="video-panel reveal">
+      <svg class="video-icon" viewBox="0 0 60 60" aria-hidden="true">
+        <circle cx="30" cy="30" r="27"/>
+        <path d="M25 20 L42 30 L25 40 Z"/>
+      </svg>
+      <div class="video-copy">
+        <h3>Watch project demos on YouTube</h3>
+        <p>Live walkthroughs of AI builds, chatbot demos, and dev breakdowns —
+          hosted on my channel. Individual embeds land here as videos get
+          tagged for the portfolio.</p>
+        <a href="https://www.youtube.com/@SharanArvind" target="_blank" rel="noopener" class="btn btn-primary magnetic">
+          <span>Visit the channel</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITY / LEADERSHIP / LINKEDIN POSTS ============ -->
+  <section id="activity" class="section activity">
+    <p class="kicker reveal">07 — Activity</p>
+    <h2 class="section-title reveal">Leadership &amp; live feed</h2>
+
+    <div class="leadership-row">
+      <div class="leadership-card tilt-card reveal">
+        <p class="l-date">Aug 2023 — Aug 2024</p>
+        <h3>GDSC Lead</h3>
+        <p class="l-org">Google Developer Student Clubs</p>
+        <p class="l-desc">Led the campus chapter at Sri Manakula Vinayagar Engineering College — workshops, hackathons, and community events.</p>
+      </div>
+      <div class="leadership-card tilt-card reveal">
+        <p class="l-date">Feb 2024 — Dec 2024</p>
+        <h3>Management Team Lead</h3>
+        <p class="l-org">IEEE</p>
+        <p class="l-desc">Led the management team for education-focused initiatives and event operations.</p>
+      </div>
+      <div class="leadership-card tilt-card reveal">
+        <p class="l-date">Jan 2022 — Jan 2023</p>
+        <h3>Volunteer</h3>
+        <p class="l-org">GDSC</p>
+        <p class="l-desc">Started as a volunteer before stepping up to lead the chapter the following term.</p>
+      </div>
+    </div>
+
+    <div class="linkedin-feed reveal">
+      <div class="feed-header">
+        <h3>Latest from LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/sharanarvind/" target="_blank" rel="noopener" class="feed-link">View profile →</a>
+      </div>
+      <div class="feed-scroll">
+        <article class="feed-card">
+          <p class="fc-date">Jun 2026</p>
+          <p class="fc-text">One year into my Distance Education MBA at Pondicherry University, DDE — stepping out of my technical comfort zone has completely rewired how I look at business. Balancing a full-time AI/ML role at Cognizant with the coursework hasn't been easy, but the dots are finally connecting.</p>
+        </article>
+        <article class="feed-card">
+          <p class="fc-date">Dec 2025</p>
+          <p class="fc-text">📘 Starting a new learning journey — enrolled in the MBA (General) at Pondicherry University, DDE through Open Distance Learning. Your network is shaped by the value you share, not just the room you're sitting in.</p>
+        </article>
+        <article class="feed-card">
+          <p class="fc-date">Mar 2024</p>
+          <p class="fc-text">Placed 4th at the Scale +91 Hackathon · FinTech Festival India 2024, presented by Constellar and powered by Hack2skill — a genuinely exhilarating stretch of building at the intersection of fintech and AI.</p>
+        </article>
+        <article class="feed-card">
+          <p class="fc-date">Mar 2024</p>
+          <p class="fc-text">🌟 Wrapped "ML Mastery: Unveiling Data Secrets to Customer Insights" — a full-day event built and run with the GDSC core and ML team, start to finish.</p>
+        </article>
+        <article class="feed-card">
+          <p class="fc-date">Aug 2023</p>
+          <p class="fc-text">🚀 Selected to lead GDSC 2023–2024 at Sri Manakula Vinayagar Engineering College — thrilled doesn't cover it.</p>
+        </article>
+        <article class="feed-card">
+          <p class="fc-date">Sep 2023</p>
+          <p class="fc-text">Shipped Zepp — an AI shopping companion with generative product suggestions and ML-powered image search, built at a Botathon. Led the front-end end to end.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="section education">
+    <p class="kicker reveal">08 — Education</p>
+    <div class="edu-grid">
+      <div class="edu-card tilt-card reveal">
+        <p class="e-date">Sep 2021 — Jul 2025</p>
+        <h3>B.Tech, Artificial Intelligence &amp; Data Science</h3>
+        <p class="e-org">Sri Manakula Vinayagar Engineering College</p>
+        <p class="e-extra">CGPA 9.12 / 10</p>
+      </div>
+      <div class="edu-card tilt-card reveal">
+        <p class="e-date">Sep 2025 — Jul 2027 (Expected)</p>
+        <h3>MBA — Business Administration &amp; Management</h3>
+        <p class="e-org">Pondicherry University (Directorate of Distance Education)</p>
+        <p class="e-extra">Finance · Marketing · Operations · Org. Behavior</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section contact">
+    <div class="contact-inner">
+      <p class="kicker reveal">09 — Contact</p>
+      <h2 class="section-title reveal">Let's build something.</h2>
+      <p class="contact-lede reveal">
+        Open to conversations on generative AI, agentic systems, or a decent
+        game of chess. Reach out directly:
+      </p>
+      <div class="contact-links reveal">
+        <a href="mailto:sharanarvind87@gmail.com" class="contact-link magnetic">
+          <span class="cl-label">Email</span><span class="cl-value">sharanarvind87@gmail.com</span>
+        </a>
+        <a href="tel:+919994136361" class="contact-link magnetic">
+          <span class="cl-label">Phone</span><span class="cl-value">+91 99941 36361</span>
+        </a>
+        <a href="https://www.linkedin.com/in/sharanarvind/" target="_blank" rel="noopener" class="contact-link magnetic">
+          <span class="cl-label">LinkedIn</span><span class="cl-value">in/sharanarvind</span>
+        </a>
+        <a href="https://github.com/SharanArvind" target="_blank" rel="noopener" class="contact-link magnetic">
+          <span class="cl-label">GitHub</span><span class="cl-value">github.com/SharanArvind</span>
+        </a>
+        <a href="https://www.youtube.com/@SharanArvind" target="_blank" rel="noopener" class="contact-link magnetic">
+          <span class="cl-label">YouTube</span><span class="cl-value">@SharanArvind</span>
+        </a>
+      </div>
+      <p class="location reveal">Puducherry, India</p>
+    </div>
+    <footer class="site-footer">
+      <p>&copy; 2026 Sharan Arvind B. Built with intent, not a template.</p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
